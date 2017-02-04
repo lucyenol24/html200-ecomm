@@ -5,6 +5,8 @@ var products = [
     "description": "Two classic patterns in one great look: This supersoft and cozy reversible scarf instantly doubles your street-style cred. 100% acrylic.",
     "imageTitle": "reversible-plaid.jpg"
   },
+  
+  
   {
     "name": "Wool Cable Knit",
     "price": 49.99,
@@ -48,3 +50,4 @@ var products = [
     "imageTitle": "twill.jpg"
   }
 ]
+
