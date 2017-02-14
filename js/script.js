@@ -33,13 +33,13 @@ var products = [
     "name": "Multi Color",
     "price": 22.99,
     "description": "The Who What Wear Oversize Color-Block Square Scarf is big, bold, and designed to twist and wrap any way you wish. All the colors of the season are harmonized in this oversize accent, so you can adjust to contrast or match your outfit; soft and lush, it’s your stylish standoff against cold AC and unexpected fall breezes. 100% acrylic",
-    "imageTitle": "images/multi-color.jpeg"
+    "imageTitle": ".images/multi-color.jpeg"
   },
   {
     "name": "Etro Paisley-Print Silk",
     "price": 249.99,
     "description": "Luxurious silk scarf with subtle paisley pattern. 100% silk",
-    "imageTitle": "images/etro.jpg"
+    "imageTitle": ".images/etro.jpg"
   },
   {
     "name": "Ashby Twill",
