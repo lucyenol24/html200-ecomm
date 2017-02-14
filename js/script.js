@@ -49,14 +49,13 @@ var products = [
   }
 ]
 
-for (i = 0; i < products.length; i++) {
-    console.log(products[i].name);
-	console.log(products[i].price);
-	console.log(products[i].description);
-}
+//for (i = 0; i < products.length; i++) {
+//    console.log(products[i].name);
+//	console.log(products[i].price);
+//	console.log(products[i].description);
+//}
 
 function capture() {
-  console.log("success");
-  console.log(document.scarfInfo.name.value);
+  console.log(document.scarfInfo.filter.value);
   event.preventDefault();
 }
