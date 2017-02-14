@@ -40,7 +40,7 @@ nav li {
 }
 
 section {
-  border: solid;
+  border-style: groove;
   border-color: white;
   border-width: thin;
   margin-right: 25%;
