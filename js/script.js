@@ -49,13 +49,28 @@ var products = [
   }
 ]
 
-//for (i = 0; i < products.length; i++) {
-//    console.log(products[i].name);
-//	console.log(products[i].price);
-//	console.log(products[i].description);
-//}
+for (i = 0; i < products.length; i++) {
+    console.log(products[i].name);
+	console.log(products[i].price);
+	console.log(products[i].description);
+}
 
 function capture() {
   console.log(document.scarfInfo.filter.value);
   event.preventDefault();
+}
+
+//TO DO: trigger on change of cart contents
+function sumPrices(cartArray) {
+  // for loop through array, sum value of price attribute for each object
+  var total = 0;
+  
+  for(var i=0; i < cartArray.length; i++) {
+    
+    if(cartArray[i].price) {
+      total = total + cartArray[i].price;
+    }
+  }
+  // TO DO: print total as html to page, next to cart icon
+  console.log(total);
 }
