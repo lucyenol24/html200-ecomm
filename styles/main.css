@@ -81,6 +81,12 @@ section {
   padding: 0.5rem;
 }
 
+@media (max-width: 500px) {
+  section { 
+    width: 90%;
+  }
+}
+
 
 .item-container {
   flex-flow: row, wrap-reverse;
@@ -92,6 +98,10 @@ section {
   float: left;
   position: relative;
   color: lightskyblue;
+}
+
+@media (max-width: 500px) {
+  .container { width: 100%; }
 }
 
 .item-container img {
