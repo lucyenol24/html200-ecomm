@@ -32,6 +32,11 @@ nav a:hover {
   font-family: 'Forum', cursive;
 }
 
+a:visited {
+  text-decoration: none;
+  color: purple;
+}
+
 nav li {
   display: inline;
   color: white;
