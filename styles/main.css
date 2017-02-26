@@ -5,6 +5,11 @@ body {
   font-family: 'Forum', cursive;
 }
 
+@media (max-width: 600px) {
+  background: white;
+  color: black;
+}
+
 header h1 {
   font-family: 'Rock Salt', cursive;
   color: whitesmoke;
@@ -56,6 +61,13 @@ nav li {
     .menu-list > .list-item a {
         display: flex;
     }
+}
+
+@media (max-width: 600px) {
+  nav ul li {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
 }
 
 section {
