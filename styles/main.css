@@ -67,6 +67,7 @@ nav li {
   nav ul li {
     padding-top: .5rem;
     padding-bottom: .5rem;
+    width: 100%;
   }
 }
 
@@ -118,7 +119,9 @@ section {
 }
 
 @media (max-width: 500px) {
-  .container { width: 100%; }
+  .container { 
+    width: 100%; 
+  }
 }
 
 .item-container img {
