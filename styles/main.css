@@ -11,7 +11,7 @@ body {
 }
 
 @media print {
-  nav, footer {
+  nav {
     display: none;
   }
 }
@@ -138,6 +138,12 @@ section {
 @media (max-width: 500px) {
   .item-container img {
     width: 100%;
+  }
+}
+
+@media print {
+  .item-container {
+    width: 20%;
   }
 }
 
