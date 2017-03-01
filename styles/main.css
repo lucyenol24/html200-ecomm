@@ -119,7 +119,7 @@ section {
 }
 
 @media (max-width: 500px) {
-  .container { 
+  .item-container { 
     width: 100%; 
   }
 }
@@ -129,7 +129,7 @@ section {
   align-content: center;
 }
 
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .item-container img {
     width: 100%;
   }
@@ -140,6 +140,12 @@ section {
   font-size: 1rem;
   color: white;
   padding: 0.5rem;
+}
+
+@media (max-width: 500px) {
+  .item-container p {
+    width: 100%;
+  }
 }
 
 .item-container h3 {
