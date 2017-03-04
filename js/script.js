@@ -74,3 +74,28 @@ function sumPrices(cartArray) {
   // TO DO: print total as html to page, next to cart icon
   console.log(total);
 }
+
+//TO DO:  add/remove items from cart
+//Add +/- button to item listings in HTML
+//Define a global variable in JS, array “cart”.
+//Write onclick handler in JS that takes item names, pushes them into “cart” array if they are not yet there, removes them if they are, console logs cart.length.
+//Add onclick() to +/- button to trigger handler.
+
+var cart = [{name: "yes"}, {name: "no"}];
+
+function compareName(prod1, prod2) {
+  if (prod1.name.toLowerCase() < prod2.name.toLowerCase())
+    return -1;
+  else if (prod1.name.toLowerCase() > prod2.name.toLowerCase())
+    return 1;
+  else
+    return 0;
+}
+
+
+
+//sort items by selected attribute
+//
+//Write 2 comparison functions in JS: one that compares by name, one by price.
+//In form submit handler, check the value sent, then sort the “products” array using the appropriate comparison function.
+//Console log the result of the sort.
