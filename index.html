@@ -21,7 +21,11 @@
         <li><a href="#">Hats</a></li>
         <li><a href="#">Gloves</a></li>
         <li><a href="#">Scarves</a></li>
-        <li class="cart-info">
+        <li id="cart-info">
+          <span class="fa-stack badge hidden" id="badge">
+          <i class="fa fa-circle-o fa-stack-2x"></i>
+          <strong class="fa-stack-1x number-of-items-in-cart"></strong>
+          </span>
           <i class="fa fa-shopping-cart" aria-hidden="true"></i>
         </li>
       </ul>
@@ -29,22 +33,24 @@
     
     <div id="cart">
       <h2> Your Cart </h2>
-      <div class="cart-items" id="cartItems"></div>
-      <button onclick="emptyCart()">Empty Cart</button>
-      <button onclick="checkOut()">Checkout!</button>
+      <p class="hidden" id="itemsMessage"><span class="number-of-items-in-cart"></span> item(s) in the cart</p>
+      <p id="emptyMessage"> Your cart is empty! </p>
+      <div class="separator"></div>
+      <ul id="cart-items-list"></ul>
+      <div class="separator"></div>
+      <p id="cart-total"></p>
+      <button id="checkout"> Checkout! </button>
     </div>
   </header>
   
-
   <aside>
-    <form name="scarfInfo" onsubmit="capture();">
-      <label>Filter By:
-        <select name="filter">
+    <form name="sortScarf" onsubmit="sortProducts();">
+      <label for ="sort"> Filter By: </label>
+        <select name="sort" id="sort">
           <option value="">Choose One</option>
           <option value="price">Price</option>
           <option value="name">Name</option>
         </select>
-      </label>
 
       <input type="submit" value="Sort">
     </form>
