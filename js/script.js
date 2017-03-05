@@ -81,19 +81,6 @@ function sumPrices(cartArray) {
 //Write onclick handler in JS that takes item names, pushes them into “cart” array if they are not yet there, removes them if they are, console logs cart.length.
 //Add onclick() to +/- button to trigger handler.
 
-var cart = [{name: "yes"}, {name: "no"}];
-
-function compareName(prod1, prod2) {
-  if (prod1.name.toLowerCase() < prod2.name.toLowerCase())
-    return -1;
-  else if (prod1.name.toLowerCase() > prod2.name.toLowerCase())
-    return 1;
-  else
-    return 0;
-}
-
-
-
 //sort items by selected attribute
 //
 //Write 2 comparison functions in JS: one that compares by name, one by price.
@@ -144,11 +131,11 @@ function findProductIndex(name, array) {
 function addToCart(name price) {
   var index = findProductIndex(name, cart);
   if(index != -1) {
-    cart[index].amt ++;
+    cart[index].qty ++;
   }
   else {
     cart.push({"name": name,
-              "amt": 1,
+              "qty": 1,
               "price": price
               });
   }
@@ -159,13 +146,67 @@ function addToCart(name price) {
 function removeFromCart(name) {
   var index = findProductIndex(name, cart);
   if(index != -1) {
-    var quantity = cart[index].amt;
+    var quantity = cart[index].qty;
     if(quantity > 1) {
-      cart[index].amt --;
+      cart[index].qty --;
     }
     else {
       cart.splice(index, 1);
     }
   }
   updatedCart();
+}
+
+function numberOfItems(array) {
+  var items= 0;
+  for (var i =0, i < array.length; i++) {
+    items += array[i].qty;
+  }
+  return items;
+}
+
+function removeScarf(name) {
+  return function() {
+    removeFromCart(name);
+  }
+}
+
+function updatedCart() {
+  var number = document.querySelectorAll(".number-of-items-in-cart");
+  var items = numberOfItems(cart);
+  number[0].innerHTML = items;
+  number[1].innerHTML = items;
+  
+  var emptyMessage = document.getElementById("emptyMessage");
+  var itemsMessage = document.getElementById("itemsMessage");
+  
+  var cartList = document.getElementById("cart-items-list");
+  cleanElement(cartList);
+  var total = 0;
+  
+  if(cart.length > 0) {
+    emptyMessage.className = "hidden";
+    itemsMessage.className = "";
+    
+    for (var i = 0, i < cart.length, i++) {
+      var item = document.createElement("li");
+      item.className = "item-in-cart";
+      item.innerHTML = "<div class='name'>" + cart[i].name + "</div";
+      item.innerHTML += "div class='qty'>" + cart[i].qty + " x </div>";
+      item.innerHTML += <"div class='price'>$" + cart[i].price + "</div";
+      var remove = document.createElement("a");
+      remove.textContent = "Remove";
+      remove.href = "#";
+      remove.addEventListener('click', removeEvent(cart[i].name));
+      item.appendChild(remove);
+      
+      total += cart[i].price * cart[i].qty;
+      cartList.appendChild(item);
+    }
+  }
+  else {
+    emptyMessage.className = "";
+    itemsMessage.className = "hidden";
+  }
+  document.getElementById("cart-total").innerHTML = "Total: $" + total.toFixed(2);
 }
