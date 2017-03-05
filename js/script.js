@@ -81,7 +81,7 @@ function sumPrices(cartArray) {
 //Write onclick handler in JS that takes item names, pushes them into “cart” array if they are not yet there, removes them if they are, console logs cart.length.
 //Add onclick() to +/- button to trigger handler.
 
-var cart = [{name: "yes"}, {name: "no"}]
+var cart = [];
 
 function addItem(item) {
   var index = cart.indexOf(item);
@@ -104,3 +104,4 @@ function remove(item) {
 //Write 2 comparison functions in JS: one that compares by name, one by price.
 //In form submit handler, check the value sent, then sort the “products” array using the appropriate comparison function.
 //Console log the result of the sort.
+
