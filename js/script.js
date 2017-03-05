@@ -112,8 +112,10 @@ function compareByName(prod1, prod2) {
     return 1;
   else
     return 0;
+  console.log(compareByName;)
 }
 
 function compareByPrice(prod1, prod2) {
   return prod1.price - prod2.price;
+  console.log(compareByPrice);
 }
