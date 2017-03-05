@@ -105,3 +105,15 @@ function remove(item) {
 //In form submit handler, check the value sent, then sort the “products” array using the appropriate comparison function.
 //Console log the result of the sort.
 
+function compareByName(prod1, prod2) {
+  if (prod1.name.toLowerCase() < prod2.name.toLowerCase())
+    return -1;
+  else if (prod1.name.toLowerCase() > prod2.name.toLowerCase())
+    return 1;
+  else
+    return 0;
+}
+
+function compareByPrice(prod1, prod2) {
+  return prod1.price - prod2.price;
+}
