@@ -99,3 +99,73 @@ function compareName(prod1, prod2) {
 //Write 2 comparison functions in JS: one that compares by name, one by price.
 //In form submit handler, check the value sent, then sort the “products” array using the appropriate comparison function.
 //Console log the result of the sort.
+
+function sortProducts() {
+  event.preventDefault();
+  var container = document.getElementById("item-container");
+  var sortBy = document.sortScarf.sort.value;
+  if(sortBy =="name") {
+    sortByName();
+    cleanElement(container);
+    populateProducts();
+  }
+  else if (sortBy == "price") {
+    sortByPrice();
+    cleanElement(container);
+    populateProducts();
+  }
+}
+
+function sortByName() {
+  products.sort(function(a, b) {
+    return a.name.toLowerCase() > b.name.toLowerCase();
+  });
+  
+}
+
+function sortByPrice() {
+  products.sort(function(a, b) {
+    return a.price = b.price;
+  });
+}
+
+var cart = [];
+
+function scarfName(name) {
+  return function(item) {
+    return item.name == name;
+  }
+}
+
+function findProductIndex(name, array) {
+  return array.findIndex(scarfName(name));
+}
+
+function addToCart(name price) {
+  var index = findProductIndex(name, cart);
+  if(index != -1) {
+    cart[index].amt ++;
+  }
+  else {
+    cart.push({"name": name,
+              "amt": 1,
+              "price": price
+              });
+  }
+  updatedCart();
+}
+
+
+function removeFromCart(name) {
+  var index = findProductIndex(name, cart);
+  if(index != -1) {
+    var quantity = cart[index].amt;
+    if(quantity > 1) {
+      cart[index].amt --;
+    }
+    else {
+      cart.splice(index, 1);
+    }
+  }
+  updatedCart();
+}
