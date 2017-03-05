@@ -87,6 +87,37 @@ function sumPrices(cartArray) {
 //In form submit handler, check the value sent, then sort the “products” array using the appropriate comparison function.
 //Console log the result of the sort.
 
+document.getElementById("cart-info").onclick = function() {
+  var popup = document.getElementById("my-cart");
+  toggleVisibility(popup);
+};
+
+function clickEvent(name, price) {
+  return function() {
+    addToCart(name, price);
+  };
+}
+
+function populateProducts() {
+  var container = document.getElementById("item-container");
+  for (var i = 0, i < products.length; i++) {
+    var item = document.createElement("div");
+    item.className = "item";
+    item.innerHTML = "<h4>" + products[i].name + "</h4>";
+    item.innerHTML += "<img srcset='" + products[i].imageSrcSet + "' " +
+      "sizes='" + products[i].imageSizes + "'" +
+      "src='" + products[i].imageTitle + "' alt= '" + products[i].name + " image'>";
+    item.innerHTML += "<p>" + products[i].description + "</p>";
+    item.innerHTML += "<p>$" + products[i].price + "</p>";
+    var button = document.createElement("button");
+    button.className = "hidden";
+    button.addEventListener('click', clickEvent(products[i].name, products[i].price));
+    button.textContent = "Add to Cart";
+    item.appendChild(button);
+    container.appendChild(item);
+  }
+}
+
 function sortProducts() {
   event.preventDefault();
   var container = document.getElementById("item-container");
