@@ -91,7 +91,7 @@ function addItem(item) {
   console.log(cart);
 }
 
-function remove(item) {
+function removeItem(item) {
   var index = cart.indexOf(item);
   if (index != -1) {
     cart.splice(index, 1);
@@ -105,17 +105,36 @@ function remove(item) {
 //In form submit handler, check the value sent, then sort the “products” array using the appropriate comparison function.
 //Console log the result of the sort.
 
-function compareByName(prod1, prod2) {
-  if (prod1.name.toLowerCase() < prod2.name.toLowerCase())
+function comparePrice(a, b) {
+  if (a.price < b.price) {
     return -1;
-  else if (prod1.name.toLowerCase() > prod2.name.toLowerCase())
+  }
+  if (a.price > b.price) {
     return 1;
-  else
-    return 0;
-  console.log(compareByName);
+  }
+  return 0;
 }
 
-function compareByPrice(prod1, prod2) {
-  return prod1.price - prod2.price;
-  console.log(compareByPrice);
+function compareName(a, b) {
+  if (a.name < b.name) {
+    return -1;
+  }
+  if (a.name > b.name) {
+    return 1;
+  }
+  return 0;
+}
+
+function filterProducts() {
+  var sort_type = document.sortBy.filter.value;
+  if (sort_type == "price") {
+    console.log("sort by price");
+    products.sort(comparePrice);
+  }
+  else if (sort_type == "name") {
+    console.log("sort by name");
+    products.sort(compareName);
+  }
+  console.log(products);
+  event.preventDefault();
 }
