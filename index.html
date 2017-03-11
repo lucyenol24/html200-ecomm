@@ -22,7 +22,10 @@
         <li><a href="#">Gloves</a></li>
         <li><a href="#">Scarves</a></li>
         <li id="cart-info">
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <span class="fa-stack badge hidden" id="badge">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <strong class="fa-stack-1x number-of-items-in-cart"></strong>
+          </span>
         </li>
       </ul>
     </nav>
@@ -147,7 +150,7 @@
       <div class="item">
         <h3>Wool Cable Scarf</h3>
         <img srcset="images/wool-cable250w.jpeg 250w, images/wool-cable175w.jpeg 175w, images/wool-cable100w.jpeg 100w"
-             size="(max-width: 800px) 400px, (max-width: 1600px) 800px, (min-width: 1601px) 1200px"
+             sizes="(max-width: 800px) 400px, (max-width: 1600px) 800px, (min-width: 1601px) 1200px"
              src="images/wool-cable.jpeg"
              alt="wool scarf">
           <p>Warm yourself with this women's natural cable knit scarf, crafted from 100% Merino wool. Imported.</p>
