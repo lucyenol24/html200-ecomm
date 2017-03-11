@@ -138,3 +138,19 @@ function filterProducts() {
   console.log(products);
   event.preventDefault();
 }
+
+//Adding a number of items in cart next to the cart icon
+
+function numberOfItems(array) {
+  var items = 0;
+  for (var i = 0; i < array.length; i++) {
+    items += array[i].qty;
+  }
+  return items;
+}
+
+function removeItems(name) {
+  return function() {
+    removeFromCart(name);
+  };
+}
